@@ -1,0 +1,1 @@
+Exercise (Cotação Taxa Compra)
