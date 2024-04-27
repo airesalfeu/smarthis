@@ -1,0 +1,20 @@
+﻿{
+    "configurationInfos":{
+        "processQueueName":"CotacaoTaxaCompraQueue",
+        "processQueueFolder":"Shared",
+        "maxRetryNumberInitApplications":3,
+        "maxRetryNumberProcess":2,
+        "maxConsecutiveApplicationExceptions":3,
+		"maxRetryNumberOrchestratorInteractions":3,
+        "useStorageBucketFiles":false,
+        "localBucketDir":"01-Data\\Temp\\",
+        "exScreenshotsFolderPath":"05-ExceptionScreenshots",
+        "businessProcessName":"",
+        "assets":{
+            "UrlBancoCentral":{
+                "name":"UrlBancoCentral",
+                "orchestratorFolder":"Shared"
+            }
+        }
+    }
+}

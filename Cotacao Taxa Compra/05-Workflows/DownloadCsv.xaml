@@ -1,0 +1,207 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadCsv" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_PathCsv" Type="OutArgument(x:String)" />
+    <x:Property Name="in_UrlApplication" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>850.4,1387.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DownloadCsv_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DownloadCsv" sap:VirtualizedContainerService.HintSize="608,1322.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Cotação de todas as moedas" sap:VirtualizedContainerService.HintSize="545.6,1233.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="68ec43a0-b56c-4f88-89ea-5767482032d9" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="512,993.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="si:FileInfo" Name="fileCsvCotacao" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="449.6,64.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Clicking download CSV button&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[fileCsvCotacao]" sap:VirtualizedContainerService.HintSize="449.6,670.4" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles=".download,.tmp">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="416,332" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="353.6,64.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Waiting for download&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" sap:VirtualizedContainerService.HintSize="353.6,180.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="68ec43a0-b56c-4f88-89ea-5767482032d9" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://ptax.bcb.gov.br/ptax_internet/consultarTodasAsMoedas.do?method=consultaTodasMoedas" CvTextArgument="Download" CvType="Text" DesignTimeRectangle="807, 527, 100, 28" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl src='https://ptax.bcb.gov.br/ptax_internet/consultarTodasAsMoedas.do?*' tag='IFRAME' /&gt;&lt;webctrl tag='IMG' /&gt;" FuzzyAccuracy="0.45" FuzzySelectorArgument="&lt;webctrl src='https://ptax.bcb.gov.br/ptax_internet/consultarTodasAsMoedas.do?*' tag='IFRAME' /&gt;&lt;webctrl tag='IMG' type='' class='' aaname='                         *.csv                     ' /&gt;" Guid="1d66fdde-3a80-4b9b-907b-e5a32d390571" ImageBase64="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" InformativeScreenshot="05caf80a5de8239e0dd46f1caf04a547.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Cotação de todas as moedas' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvTextArgument="Download" CvType="Text" DesignTimeRectangle="829, 528, 73, 13" ElementType="Text" FriendlyName="'Download'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:GetLastDownloadedFile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetLastDownloadedFile>
+            <ui:LogMessage DisplayName="Log Message - Edge " sap:VirtualizedContainerService.HintSize="449.6,64.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Format(&quot;File downloaded: {0}&quot;, fileCsvCotacao.Name)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <Assign sap:VirtualizedContainerService.HintSize="449.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_PathCsv]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[fileCsvCotacao.FullName]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF9SURBVFhH1ZSxTsMwFEWzsTH3X5BY+RyQ+AEqfgDUz6iY273M7Zy1YsycNehEfuHlyY5t6jTqla7UpM/vHju2q25h3R7A13brfpVRFsD34bAcAOGbj8+uaRr3Jixq67p2T9OKAtCsqqresdnr2iIAumEKwOvzSzkAG46vBvBzPo+CxVcDYLAOFhMAhPZ+t3OjxgBsWFvLqlqNAGSHhwB81k01gPXq7r5fWasBgEY0sILc1xDbGYUAQuFoAKDQB8Bq2KXEp+PRVfwJIF9tKBxFAebW7QDI8qaI2uxjGALgW/MfjgEQLLXFAAhNBWD8RQAcF5poPz08FgNghah5f1u7NwYg5ksBGG/vhCwAAmiinXMVM3N7JwwAEItpqoNDtrPRANbRq1gLCF8TbV/DEEAoHGUDyGfwNZS7QtdPhaNsAAJiktpYOJoVIBaOvABt2/YQ2rIxUwBkTIq8AD7REAAuJvZByBw1JpCqbIApp3xzq2IA/wlHyQBzaWGArvsFX3FHTCvn7cUAAAAASUVORK5CYII=" InformativeScreenshot="5f29ed37d2ca70060c5b06bdf829e38d.jpg" Selector="&lt;html app='msedge.exe' title='Cotação de todas as moedas' /&gt;" Title="Cotação de todas as moedas" Url="[in_UrlApplication]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
