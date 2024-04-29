@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="in_applicationUrl" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>900,1167.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>900,1127.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Acessar system ACME" sap:VirtualizedContainerService.HintSize="910.4,1102.4" sap2010:WorkflowViewState.IdRef="Sequence_38">
+  <Sequence DisplayName="Acessar system ACME" sap:VirtualizedContainerService.HintSize="910.4,1062.4" sap2010:WorkflowViewState.IdRef="Sequence_38">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -120,19 +120,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="848,948.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="5de82497-ac41-4499-aa80-43dac72713a9" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="848,908.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="5de82497-ac41-4499-aa80-43dac72713a9" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="814.4,708.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="814.4,668.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Home'" sap:VirtualizedContainerService.HintSize="752,571.2" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5de82497-ac41-4499-aa80-43dac72713a9" Version="V3">
+            <uix:NCheckState DelayBefore="3" DisplayName="Check App State 'Home'" sap:VirtualizedContainerService.HintSize="752,531.2" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5de82497-ac41-4499-aa80-43dac72713a9" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Destino aparece" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_39">
                   <sap:WorkflowViewStateService.ViewState>
@@ -143,7 +143,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Log Out'" sap:VirtualizedContainerService.HintSize="387.2,182.4" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5de82497-ac41-4499-aa80-43dac72713a9" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1566, 164, 100, 63" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Log Out'" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Log Out' /&gt;" Guid="155c19f4-52a6-42c0-9ff5-2afb94ea1244" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAABDCAYAAABwd0BUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAO0SURBVHhe7ZjfS9tQFMf76N9hYQMHfcigow9VEKYUkUHBC8oIiGQQsWMUCWZYH4oTAw0ssIKB9j/01efvzs2PLu2ubR11ntZT+ECTe/LrfpJzTlJ6eHiAwJfS/f09BL6UNjc3IfCltL6+DoEvIog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5zySoDjccYhi6qBvHXwBrG/Z5gOiOzmuYEv8M4DsNWGVD/DxYDbjXbTRNYwviVQiqfPIQDeh8Bn0EFy5spaBsF/5tP5XV96Es87bTqJ+GtH0HyjC2KFZfUN1BqOX02mgYJFR22+l41MbOE5+k1yHobQ1HOvXEFK/v5jhCcK5QnZysDwpefscPYoQXFKM6tBzCrU/EjtjAUVfHBziumsZTqidBst/gpJquO3hkv4X16jI735xLNR67IF5WUJnievoCY5LiQCkb7lWUXnCPts0lVRQ6unYMInRObSjHQ9CnGnIXU+wUQe9s3Oh9XdvYMI3nlGn/+im6PYall+cQVN1VcK70DROgrVPmbiZ3wbyooKqj79wYHVUZW2/ZN7R+iO7hRrK8f0EiBjQxW4Xtc2nTBG21ENF+wtO6eXxEdr4DPy34cwjSyyue4iwc31LML8r9k2Plffg65SV3fgPe6P94XP1MP21TBCUTOo+gPGVlky2CNFmMMf0UttfphyY5OjNM8mMTmfOxjf5cgmpwdKqVJ6jInIKyOvJPgp6xBullSXFXujOakuKSCZoiKO/ipsZQq/05rXmBU+ziYnh743G1L+PHW3FBs5uEG9tKlo1NQnkH7Wj25I/egyIPzXnfg/Y8xEVhGuo4W/qaVkpQHKL73Yf/Fy0031Pc3G32Ebp6EvM2227hhtrsoV43SxDx5C8JZXpqs7a+mxzPRecntfW9kGran+NZyfsTnfs3ilnKNltfvJHCpBpeVLtfm8YXVb+n33soJntRbZ7NSnEFHvkW59nb5m9xhuNVt1yExeNV9uGFWUzPQW1yHwvgmQT9H9I2m1KMaYJXhCUQlDYT8Q9nvJ7lNWFGnVt2luIJyr+V9QMPTlY/dE1IGoyD8QZj1ViSFPcGtUMfYT/L97p+9Dpw9tIub5VZ6hr0GhBBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzCmtra1B4EsJ8mP8A34D0SV1zfBHXPcAAAAASUVORK5CYII=" InformativeScreenshot="fef19858d813209fc7a346394f87f5e2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1566, 164, 100, 63" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Log Out'" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Log Out' /&gt;" Guid="155c19f4-52a6-42c0-9ff5-2afb94ea1244" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAABDCAYAAABwd0BUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAO0SURBVHhe7ZjfS9tQFMf76N9hYQMHfcigow9VEKYUkUHBC8oIiGQQsWMUCWZYH4oTAw0ssIKB9j/01efvzs2PLu2ubR11ntZT+ECTe/LrfpJzTlJ6eHiAwJfS/f09BL6UNjc3IfCltL6+DoEvIog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5Iog5zySoDjccYhi6qBvHXwBrG/Z5gOiOzmuYEv8M4DsNWGVD/DxYDbjXbTRNYwviVQiqfPIQDeh8Bn0EFy5spaBsF/5tP5XV96Es87bTqJ+GtH0HyjC2KFZfUN1BqOX02mgYJFR22+l41MbOE5+k1yHobQ1HOvXEFK/v5jhCcK5QnZysDwpefscPYoQXFKM6tBzCrU/EjtjAUVfHBziumsZTqidBst/gpJquO3hkv4X16jI735xLNR67IF5WUJnievoCY5LiQCkb7lWUXnCPts0lVRQ6unYMInRObSjHQ9CnGnIXU+wUQe9s3Oh9XdvYMI3nlGn/+im6PYall+cQVN1VcK70DROgrVPmbiZ3wbyooKqj79wYHVUZW2/ZN7R+iO7hRrK8f0EiBjQxW4Xtc2nTBG21ENF+wtO6eXxEdr4DPy34cwjSyyue4iwc31LML8r9k2Plffg65SV3fgPe6P94XP1MP21TBCUTOo+gPGVlky2CNFmMMf0UttfphyY5OjNM8mMTmfOxjf5cgmpwdKqVJ6jInIKyOvJPgp6xBullSXFXujOakuKSCZoiKO/ipsZQq/05rXmBU+ziYnh743G1L+PHW3FBs5uEG9tKlo1NQnkH7Wj25I/egyIPzXnfg/Y8xEVhGuo4W/qaVkpQHKL73Yf/Fy0031Pc3G32Ebp6EvM2227hhtrsoV43SxDx5C8JZXpqs7a+mxzPRecntfW9kGran+NZyfsTnfs3ilnKNltfvJHCpBpeVLtfm8YXVb+n33soJntRbZ7NSnEFHvkW59nb5m9xhuNVt1yExeNV9uGFWUzPQW1yHwvgmQT9H9I2m1KMaYJXhCUQlDYT8Q9nvJ7lNWFGnVt2luIJyr+V9QMPTlY/dE1IGoyD8QZj1ViSFPcGtUMfYT/L97p+9Dpw9tIub5VZ6hr0GhBBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzBFBzCmtra1B4EsJ8mP8A34D0SV1zfBHXPcAAAAASUVORK5CYII=" InformativeScreenshot="fef19858d813209fc7a346394f87f5e2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - *' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
                 </Sequence>
@@ -170,13 +170,13 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Destino não aparece" sap:VirtualizedContainerService.HintSize="449.6,205.6" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <Sequence DisplayName="Destino não aparece" sap:VirtualizedContainerService.HintSize="449.6,202.4" sap2010:WorkflowViewState.IdRef="Sequence_36">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw Exception="[New ApplicationException(&quot;Browser is taking too long to load Login Page&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,115.2" sap2010:WorkflowViewState.IdRef="Throw_3">
+                  <Throw Exception="[New ApplicationException(&quot;Browser is taking too long to load Login Page&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="Throw_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
