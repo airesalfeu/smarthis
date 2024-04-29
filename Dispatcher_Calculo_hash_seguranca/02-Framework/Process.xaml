@@ -129,10 +129,15 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If some exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="499.20000000000005,1172" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If some exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="499.20000000000005,1036.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="queueItemReference" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New DataTable()]" Name="tableDadosCliente" />
+      <Variable x:TypeArguments="x:String" Name="WorkItemID" />
+      <Variable x:TypeArguments="x:String" Name="ClientID" />
+      <Variable x:TypeArguments="x:String" Name="ClientCountry" />
+      <Variable x:TypeArguments="x:String" Name="ClientName" />
+      <Variable x:TypeArguments="ui:QueueItem" Name="NewTransactionItem" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -151,8 +156,15 @@
     </ui:BuildDataTable>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05-Workflows\ObterDetalhesClient.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436.8,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="05-Workflows\ObterDetalhesClient.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DadosWI5">[in_DadosWI5]</InArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="tableDadosCliente">[tableDadosCliente]</InOutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DadosWI5">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_DadosWI5" />
+        </InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="tableDadosCliente">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="tableDadosCliente" />
+        </InOutArgument>
+        <InArgument x:TypeArguments="sd:DataRow" x:Key="in_transactionItem">
+          <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_transactionItem" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <Assign DisplayName="Assign queueItemReference" sap:VirtualizedContainerService.HintSize="436.8,121.6" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -165,7 +177,7 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="T/C - Add Queue Item" sap:VirtualizedContainerService.HintSize="436.8,449.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="T/C - Add Queue Item" sap:VirtualizedContainerService.HintSize="436.8,314.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,10 +185,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:BulkAddQueueItems TimeoutMS="{x:Null}" DisplayName="Bulk Add Queue Items" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="334.4,195.2" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_1" QueueItemsDataTable="[tableDadosCliente]" QueueName="WorkItemACME">
+        <ui:BulkAddQueueItems TimeoutMS="{x:Null}" DisplayName="Bulk Add Queue Items" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_1" QueueItemsDataTable="[tableDadosCliente]" QueueName="WorkItemACME">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
