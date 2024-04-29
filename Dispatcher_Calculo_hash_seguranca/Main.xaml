@@ -269,7 +269,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="-&gt; Process the current transaction item." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="497.6,1500.8" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="-&gt; Process the current transaction item." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="237.6,105.6" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="452.8,1053.6" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -288,15 +288,9 @@
                       <ui:Comment DisplayName="Functioning of the variables retryableError and fatalError" sap:VirtualizedContainerService.HintSize="353.6,576" sap2010:WorkflowViewState.IdRef="Comment_7" Text="The mechanism with the retryableError and fatalError variables in the Process state controls whether the automation should terminate the applications and attempt the process again or terminate the process without retries. Within the Catch block, in the Try/Catch of the process, we now have 2 types of exceptions: System.Exception, as usual, and now ApplicationException. The default behavior is that any exception not mapped in the process, upon falling into the Catch block of System.Exception, will go to the Report state, resulting in the termination of the process.&#xA;&#xA;If it is desired to retry, the code snippet in the process step can be surrounded by a try/catch, locally throwing an ApplicationException. This default mechanism can also be altered to always retry in the case of an unmapped exception. To do this, simply swap the values of the fatalError and retryableError variables. If, within the catch block for System.Exception, the filled variable is retryableError, the process will always retry that situation." />
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="353.6,136.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="02-Framework\Process.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_transactionItem">
-                            <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="transactionItem" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DadosWI5">
-                            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtTransactions" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[config]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_transactionItem">[transactionItem]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DadosWI5">[dtTransactions]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -732,18 +726,10 @@
                                       </ui:InvokeWorkflowFile>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Flow responsible for reading, processing and structuring the collection of transactions stored in dtTransactions" DisplayName="Invoke GetTransactionsAndAuxData workflow" sap:VirtualizedContainerService.HintSize="353.6,196.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="02-Framework\GetTransactionsAndAuxData.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
-                                          </InArgument>
-                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtTransactions">
-                                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtTransactions" />
-                                          </OutArgument>
-                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_dictFilesDownloaded">
-                                            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictFilesDownloaded" />
-                                          </InArgument>
-                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_tableDadosWI5">
-                                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtTransactions" />
-                                          </OutArgument>
+                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[config]</InArgument>
+                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtTransactions">[dtTransactions]</OutArgument>
+                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_dictFilesDownloaded">[dictFilesDownloaded]</InArgument>
+                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_tableDadosWI5">[dtTransactions]</OutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -823,14 +809,14 @@
                                 <Transition DisplayName="Data acquired" sap:VirtualizedContainerService.HintSize="709.6,1129.6" sap2010:WorkflowViewState.IdRef="Transition_12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:PointCollection x:Key="ConnectorLocation">839.7333333333333,479.9333333333333 839.7333333333333,509.9333333333333 689.7333333333333,509.9333333333333 689.7333333333333,747 835.04,747 835.04,777</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">839.7333333333333,479.9333333333333 839.7333333333333,509.9333333333333 873.66,509.9333333333333 873.66,564.5</av:PointCollection>
                                       <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
-                                      <x:Int32 x:Key="DestConnectionPointIndex">30</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">42</x:Int32>
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Transition.To>
-                                    <x:Reference>__ReferenceID2</x:Reference>
+                                    <x:Reference>__ReferenceID0</x:Reference>
                                   </Transition.To>
                                   <Transition.Condition>[(fatalError Is Nothing) AndAlso (dtTransactions IsNot Nothing) AndAlso (dtTransactions.Rows.Count &gt; 0)]</Transition.Condition>
                                 </Transition>
